@@ -9,7 +9,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Trending from "./components/Trending/Trending";
 import Scheduler from "./components/Scheduler/Scheduler";
 import HelpD from "./components/HelpDesk/HelpD/HelpD";
-import Popup from "./components/Scheduler/popup/popup";
 import Profile from "./components/Profile/Profile";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
@@ -34,7 +33,6 @@ const ClerkWithRoutes = () => {
         <Route path="/schedule" element={<><Sidebar /><Scheduler/></>} />
         <Route path="/trending" element={<><Sidebar /><Trending /></>} />
         <Route path="/need-help" element={<><Sidebar /><HelpD /></>} />
-        <Route path="/popup" element={<><Sidebar /><Popup /></>} />
         <Route path="/profile" element={<><Sidebar /><Profile /></>} />
         <Route
           path="/sign-in/*"
