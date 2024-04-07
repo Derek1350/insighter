@@ -1,0 +1,146 @@
+.form-main-container{
+    display: flex;
+    flex-direction: column;
+    width: 27rem;
+    background-color: #fff;
+    height: 600px;
+    border-radius: 10px;
+}
+.form-upper{
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+}
+.form-left-descp{
+    height: 85%;
+}
+.form-left-descp > textarea {
+    padding: 20px;   
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border: none;
+    font-size: 1.2rem;
+    font-style: italic;
+    resize: none;
+}   
+.form-left-descp>textarea:focus{
+    outline: none;
+}
+.form-left-descp>textarea::placeholder{
+    color: rgb(181, 173, 173);
+}
+.form-left{
+    width: 70%;
+}
+.form-left-header{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    height: 15%;
+    align-items: center;
+}
+.add-social-account-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid rgb(221, 219, 219);
+    background-color: #37334f;
+}
+.add-social-account-icon>ion-icon{
+    width: 25px;
+    height: 25px;
+    color: #fff;
+}
+.hashtag-logo{
+    font-size: 24px;
+    font-weight: 350;
+    opacity: 70%;
+}
+.form-right{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.form-right-publish-options{
+    display: flex;
+    flex-direction: column;
+}
+.form-publish-option{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+.form-left-functions{
+    display: flex;
+    gap: 8px;
+}
+.footer-func-icon{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid rgb(221, 219, 219);
+    background-color: #37334f;
+}
+.footer-func-icon>ion-icon{
+    width: 20px;
+    height: 20px;
+    opacity: 70%;
+    color: #fff;
+}
+.footer-func-icon>i{
+    width: 25px;
+    height: 25px;
+}
+.form-right-header{
+    display: flex;
+    padding: 20px 10px;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(221, 219, 219);
+}
+.form-close-btn{
+    position: relative;
+    top: -15px;
+    right: 0;
+}
+.form-close-btn>ion-icon{
+    width: 25px;
+    height: 25px;
+    opacity: 50%;
+}
+.form-close-btn>ion-icon:hover{
+    opacity: 1;
+}
+.form-on-focus:hover{
+    cursor: pointer;
+    opacity: 50%;
+}
+.form-border{
+    border: 1px solid rgb(221, 219, 219);
+}
+.form-right-post-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    width: 80px;
+    background-color: #37334f;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.8rem;
+}

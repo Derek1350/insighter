@@ -1,12 +1,15 @@
-import './scheduler.css';
+import './App.css'
 import React, { useState, useEffect,useCallback } from 'react';
+import Form from './Form/Form.jsx';
 
-export default function Scheduler() {
+function App() {
   const [today,setToday] = useState(new Date());
   const [month,setMonth] = useState();
   const [year,setYear] = useState();
   const [days,setDays] = useState([]);
   const [eventArr,setEventArr] = useState([]);
+  const [inputDateValue,setInputDateValue]=useState('');
+  const [isEventActive, setIsEventActive] = useState(false);
   const [activeDay,setActiveDay] = useState({
                                               'date':'',
                                               'day':'',
@@ -54,7 +57,7 @@ export default function Scheduler() {
   
     const prevDates = [];
     for (let x = day; x > 0; x--) {
-      prevDates.push(<div class="schedule-day schedule-prev-date" onClick={(event)=>addListner(event)}>{prevDays - x + 1}</div>);
+      prevDates.push(<div className="schedule-day schedule-prev-date" onClick={(event)=>addListner(event)}>{prevDays - x + 1}</div>);
     }
 
     const currentMonth=[];
@@ -67,23 +70,23 @@ export default function Scheduler() {
       });
       if(i===today.getDate() && month===today.getMonth() && year===today.getFullYear()){
         if (event) {
-          currentMonth.push(<div class="schedule-day schedule-today schedule-active schedule-event" onClick={(event)=>addListner(event)}>{i}</div>);
+          currentMonth.push(<div className="schedule-day schedule-today schedule-active schedule-event" onClick={(event)=>addListner(event)}>{i}</div>);
         } else {
-          currentMonth.push(<div class="schedule-day schedule-today schedule-active" onClick={(event)=>addListner(event)}>{i}</div>);
+          currentMonth.push(<div className="schedule-day schedule-today schedule-active" onClick={(event)=>addListner(event)}>{i}</div>);
         }
       }
       else{
         if (event && activeDate) {
-          currentMonth.push(<div class="schedule-day schedule-event schedule-active" onClick={(event)=>addListner(event)}>{i}</div>);
+          currentMonth.push(<div className="schedule-day schedule-event schedule-active" onClick={(event)=>addListner(event)}>{i}</div>);
         } else if(event) {
-          currentMonth.push(<div class="schedule-day schedule-event" onClick={(event)=>addListner(event)}>{i}</div>);
+          currentMonth.push(<div className="schedule-day schedule-event" onClick={(event)=>addListner(event)}>{i}</div>);
         }
         else if(i==activeDate){
-          currentMonth.push(<div class="schedule-day schedule-active" onClick={(event)=>addListner(event)}>{i}</div>);
+          currentMonth.push(<div className="schedule-day schedule-active" onClick={(event)=>addListner(event)}>{i}</div>);
           console.log("clicked");
         }
         else{
-          currentMonth.push(<div class="schedule-day " onClick={(event)=>addListner(event)}>{i}</div>);
+          currentMonth.push(<div className="schedule-day " onClick={(event)=>addListner(event)}>{i}</div>);
         }
       }
 
@@ -91,7 +94,7 @@ export default function Scheduler() {
   
     const nextDates = [];
     for (let j = 1; j <= nextDays; j++) {
-      nextDates.push(<div class="schedule-day schedule-next-date" onClick={(event)=>addListner(event)}>{j}</div>);
+      nextDates.push(<div className="schedule-day schedule-next-date" onClick={(event)=>addListner(event)}>{j}</div>);
     }
   
     setDays((prevDates.concat(currentMonth)).concat(nextDates));
@@ -139,18 +142,38 @@ export default function Scheduler() {
       setActiveDate(e.target.innerHTML)
     }
   }
+  const handleDateChange = (event) => {
+    inputDateValue.replace(/[^0-9/]/g, "");
+    const newValue = event.target.value;
+    const previousValue = inputDateValue;
+    if (newValue.length === 2 && newValue.length > previousValue.length) {
+      setInputDateValue(newValue + "/");
+    } else if (newValue.length > 7) {
+      setInputDateValue(newValue.slice(0, 7));
+    } else if (newValue.length === 3 && newValue.length < previousValue.length) {
+      setInputDateValue(newValue.slice(0, 2));
+    } else {
+      setInputDateValue(newValue);
+    }
+  }
+  function goToCustom(){
+    const inputtedDate=inputDateValue.split('/');
+    console.log(inputtedDate);
+    setMonth((Number(inputtedDate[0]))-1);
+    setYear(Number(inputtedDate[1]));
+  }
 
   return (
     <>
-      <div class="schedule-container">
-        <div class="schedule-left">
-          <div class="schedule-calendar">
-            <div class="schedule-month">
-              <i class="fas fa-angle-left schedule-prev" onClick={prevMonth}></i>
-              <div class="schedule-date">{months[month] + " " + year}</div>
-              <i class="fas fa-angle-right schedule-next" onClick={nextMonth}></i>
+      <div className="schedule-container">
+        <div className="schedule-left">
+          <div className="schedule-calendar">
+            <div className="schedule-month">
+              <i className="fas fa-angle-left schedule-prev" onClick={prevMonth}></i>
+              <div className="date">{months[month] + " " + year}</div>
+              <i className="fas fa-angle-right schedule-next" onClick={nextMonth}></i>
             </div>
-            <div class="schedule-weekdays">
+            <div className="schedule-weekdays">
               <div>Sun</div>
               <div>Mon</div>
               <div>Tue</div>
@@ -159,63 +182,57 @@ export default function Scheduler() {
               <div>Fri</div>
               <div>Sat</div>
             </div>
-            <div class="schedule-days">
+            <div className="schedule-days">
               {
-                days.map((htmlString, index) => htmlString)
+                days.map((htmlString, index) => (
+                  <React.Fragment key={index}>
+                    {htmlString}
+                  </React.Fragment>
+                ))
               }
             </div>
-            <div class="schedule-goto-today">
-              <div class="schedule-goto">
-                <input type="text" placeholder="mm/yyyy" class="schedule-date-input" />
-                <button class="schedule-goto-btn">Go</button>
+            <div className="schedule-goto-today">
+              <div className="schedule-goto">
+                <input type="text" placeholder="mm/yyyy" className="schedule-date-input" value={inputDateValue} onChange={(event)=>handleDateChange(event)}/>
+                <button className="schedule-goto-btn" onClick={goToCustom}>Go</button>
               </div>
-              <button class="schedule-today-btn" onClick={goToToday}>Today</button>
+              <button className="schedule-today-btn" onClick={goToToday}>Today</button>
             </div>
           </div>
         </div>
-        <div class="schedule-right">
-          <div class="schedule-today-date">
-            <div class="schedule-event-day">{activeDay.day}</div>
-            <div class="schedule-event-date">{activeDay.date+" "+activeDay.month+" "+activeDay.year}</div>
+        <div className="schedule-right">
+          <div className="schedule-today-date">
+            <div className="schedule-event-day">{activeDay.day}</div>
+            <div className="schedule-event-date">{activeDay.date+" "+activeDay.month+" "+activeDay.year}</div>
           </div>
-          <div class="schedule-events"></div>
-          <div class="schedule-add-event-wrapper">
-            <div class="schedule-add-event-header">
-              <div class="schedule-title">Add Event</div>
-              <i class="fas fa-times schedule-close"></i>
-            </div>
-            <div class="schedule-add-event-body">
-              <div class="schedule-add-event-input">
-                <input
-                  type="text"
-                  placeholder="Event Name"
-                  class="schedule-event-name"
-                />
-              </div>
-              <div class="schedule-add-event-input">
-                <input
-                  type="text"
-                  placeholder="Event Time From"
-                  class="schedule-event-time-from"
-                />
-              </div>
-              <div class="schedule-add-event-input">
-                <input
-                  type="text"
-                  placeholder="Event Time To"
-                  class="schedule-event-time-to"
-                />
-              </div>
-            </div>
-            <div class="schedule-add-event-footer">
-              <button class="schedule-add-event-btn">Add Event</button>
-            </div>
+          <div className="schedule-events"></div>
+          <div className={`schedule-add-event-wrapper ${isEventActive ? 'schedule-active' : ''}`}>
+            <Form/>
           </div>
-        </div>
-        <button class="schedule-add-event">
-          <i class="fas fa-plus"></i>
-        </button>
+          <div className="schedule-right-footer">
+            <div className="schedule-set-EventDate">
+              <input type="date" className="set-post-date" />
+            </div>
+            <div className="schedule-set-EventTime">
+              <input type="time" className="set-post-time" />
+            </div>
+            <div className="schedule-add-event">
+              <button className="schedule-add-event-btn" onClick={()=>{
+                if(isEventActive){
+                  setIsEventActive(false);
+                }
+                else{
+                  setIsEventActive(true);
+                }
+              }}>
+                <i className="fas fa-plus"></i>
+              </button>
+            </div>
+          </div> 
+        </div> 
       </div>
     </>
   );
 }
+
+export default App
