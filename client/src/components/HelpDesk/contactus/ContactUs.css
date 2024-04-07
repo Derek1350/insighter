@@ -1,0 +1,68 @@
+.contactUS-form{
+    height: 90%;
+    width: 70%;
+    /* background-color: rgb(213, 198, 243); */
+    background: linear-gradient(to left, #2F3E52, #243b55);
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}
+.contactUS-form input{
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1.5px solid black;
+    margin-bottom: 1.5rem;
+
+}
+.contactUs-details{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactUs-details h1{
+    font-size: 2.5rem;
+}
+.name{
+    display: flex;
+    gap: 28%;
+}
+.form-container{
+    padding: 10px;
+}
+.input-name{
+    display: flex;
+    gap: 1rem;
+}
+.input-name input{
+    width: 50%;
+    height: 40px;
+}
+.email input{
+    width: 100%;
+    height: 3rem;
+}
+#text{
+    width: 100%;
+    resize: none; 
+}
+.contactUS-form button{
+    background-color: #429ACA;
+    
+    border-radius: 20px;
+    border: none;
+    height: 30px;
+    width: 100px;
+    /* margin-left: 35%; */
+}
+.contactUS-form button:hover{
+    border: 2.5px solid gold;
+    font-size: 15px;
+}
+.contactUS-form button:active{
+    opacity: 80%;
+    
+}

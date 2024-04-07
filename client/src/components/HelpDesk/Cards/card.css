@@ -1,0 +1,28 @@
+.card{
+    /* background-color: rgb(140, 0, 255); */
+     background-color: #0f121a;
+    height: 5.5rem;
+    width: 8.5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid transparent;
+}
+.card:hover{
+    cursor: pointer;
+    border: 2px solid rgb(214, 214, 82);
+    background-color: #181e2b;
+
+}
+.card:active{
+    font-size: 0.88rem;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}

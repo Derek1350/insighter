@@ -1,0 +1,15 @@
+.yt-img-container{
+    border: 1px solid;
+}
+.youtube-profile-img{
+    height: 120px;
+    border-radius: 50rem;
+    padding: 10px;
+}
+.hello p{
+    width: 33.3%;
+    padding: 10px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+}

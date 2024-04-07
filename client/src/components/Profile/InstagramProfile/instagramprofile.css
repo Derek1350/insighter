@@ -1,0 +1,102 @@
+.instagram-profile-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+.instagram-userdata-container{
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    width: 100%
+}
+.instagram-userdata-content{
+    display: flex;
+    font-size: 20px;
+    gap: 50px;
+    align-items: center 
+}
+.instagram-profile-img{
+    border-radius: 50rem;
+    height: 80px;
+    width: 100px
+}
+.instagram-username-data{
+    display: flex;
+    gap: 1rem;
+    align-items: center
+}
+.instagram-profile-name{
+    font-size: 30px;
+    margin: 0;
+}
+.instagram-usercount-data{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center
+}
+.instagram-userposts-container{
+    display: flex;
+    justify-content:space-between;
+    background: #0F121A;
+    padding: 30px 30px 0px 30px;
+    border-radius: 30px;
+    flex-wrap: wrap;
+}
+.instagram-userposts-content{
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 15px;
+    width:280px;
+    height: 300px;
+    margin-bottom: 30px
+}
+.instagram-userposts-data{
+    width: 100%;
+    height: 100%;
+    border-radius:25px
+}
+#mobile-instagram-usercount-data{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .instagram-userdata-container{
+        padding: 15px 30px;
+        width: 100%
+    }
+    .instagram-userdata-content{
+        gap: 40px;
+    }
+    .instagram-username-data{
+        flex-direction: column;
+        align-items: start;
+    }
+    .instagram-profile-img{
+        height: 65px;
+        width: 80px
+    }
+    .instagram-profile-name{
+        font-size: 20px;
+        padding-left: 15px;
+    }
+    .instagram-usercount-data{
+        display: none;
+    }
+    .instagram-userposts-container{
+        justify-content: center;
+    }
+    .instagram-userposts-content{
+        width: 100%;
+        height: 60vh;
+    }
+    .instagram-userposts-content{
+        margin-bottom: 10px
+    }
+    #mobile-instagram-usercount-data{
+        display: flex;
+        margin-top: 30px;
+        font-size: 16px;
+    }
+}

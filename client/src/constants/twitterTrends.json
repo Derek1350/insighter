@@ -1,0 +1,88 @@
+{
+    "trends": [
+      {
+        "name": "#SpaceXLaunch",
+        "tweet_volume": 30000,
+        "url": "https://twitter.com/search?q=%23SpaceXLaunch"
+      },
+      {
+        "name": "#NFTs",
+        "tweet_volume": 25000,
+        "url": "https://twitter.com/search?q=%23NFTs"
+      },
+      {
+        "name": "#ClimateAction",
+        "tweet_volume": 22000,
+        "url": "https://twitter.com/search?q=%23ClimateAction"
+      },
+      {
+        "name": "#CryptoNews",
+        "tweet_volume": 18000,
+        "url": "https://twitter.com/search?q=%23CryptoNews"
+      },
+      {
+        "name": "#ArtificialIntelligence",
+        "tweet_volume": 15000,
+        "url": "https://twitter.com/search?q=%23ArtificialIntelligence"
+      },
+      {
+        "name": "#MarsMission",
+        "tweet_volume": 12000,
+        "url": "https://twitter.com/search?q=%23MarsMission"
+      },
+      {
+        "name": "#Blockchain",
+        "tweet_volume": 10000,
+        "url": "https://twitter.com/search?q=%23Blockchain"
+      },
+      {
+        "name": "#TechTrends",
+        "tweet_volume": 8500,
+        "url": "https://twitter.com/search?q=%23TechTrends"
+      },
+      {
+        "name": "#DigitalArt",
+        "tweet_volume": 7500,
+        "url": "https://twitter.com/search?q=%23DigitalArt"
+      },
+      {
+        "name": "#RenewableEnergy",
+        "tweet_volume": 7000,
+        "url": "https://twitter.com/search?q=%23RenewableEnergy"
+      },
+      {
+        "name": "#SpaceExploration",
+        "tweet_volume": 6000,
+        "url": "https://twitter.com/search?q=%23SpaceExploration"
+      },
+      {
+        "name": "#AI",
+        "tweet_volume": 5500,
+        "url": "https://twitter.com/search?q=%23AI"
+      },
+      {
+        "name": "#VirtualReality",
+        "tweet_volume": 5000,
+        "url": "https://twitter.com/search?q=%23VirtualReality"
+      },
+      {
+        "name": "#5G",
+        "tweet_volume": 4500,
+        "url": "https://twitter.com/search?q=%235G"
+      },
+      {
+        "name": "#CyberSecurity",
+        "tweet_volume": 4000,
+        "url": "https://twitter.com/search?q=%23CyberSecurity"
+      }
+    ],
+    "as_of": "2024-03-29T13:00:00Z",
+    "created_at": "2024-03-29T12:55:00Z",
+    "locations": [
+      {
+        "name": "Worldwide",
+        "woeid": 1
+      }
+    ]
+  }
+  

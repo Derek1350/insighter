@@ -1,0 +1,162 @@
+/* main.css */
+
+/* Main navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    margin-bottom: 6px;
+}
+
+/* Navigation left section */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;
+}
+
+/* Logo section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Menu icon */
+.menu-icon {
+    font-size: 1.875rem;
+    cursor: pointer;
+}
+
+/* Logo text */
+.logo-text {
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+
+/* Navigation links */
+.nav-link {
+    color: #636363;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+/* Large screen navigation links */
+.lg-nav-link {
+    display: none;
+}
+
+/* Sidebar mobile menu */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    transform: translateX(100%);
+    transition: transform 0.3s;
+}
+
+.sidebar-menu.show {
+    transform: translateX(0);
+}
+
+/* Sidebar content */
+.sidebar-content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 15rem;
+    background-color: #151f31;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    z-index: 50;
+}
+
+/* Close icon */
+.close-icon {
+    margin-top: 6px;
+    font-size: 1.875rem;
+    cursor: pointer;
+}
+
+/* Sidebar links */
+.sidebar-link {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* .sidebar-link:hover {
+    color: #208dbf;
+} */
+
+/* Navigation right section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Cart icon */
+.cart-icon {
+    font-size: 1.875rem;
+}
+
+.header-nav_elements{
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+}
+
+.gradient-text{
+    /* background: #208dbf; */
+    /* color: #208dbf; */
+    background-attachment: cover;
+    background-clip: text;
+    color: transparent;
+}
+
+.mobile-content{
+    padding: 1.125rem;
+    display: flex;
+    white-space: nowrap;
+    /* color: #208dbf; */
+    padding-left: 10px;
+}
+
+.sidebar-link {
+    color: #fff;
+    display: flex;
+    font-weight: 600;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.login-btn-mobile{
+    border: none;
+    background: linear-gradient(to right, #06a9f4, #5239d8);
+    padding: 10px 15px;
+    width: 10rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 3rem;
+    color: #fff;
+    margin-left: 1.3rem;
+}

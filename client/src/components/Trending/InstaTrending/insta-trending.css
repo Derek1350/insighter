@@ -1,0 +1,34 @@
+.insta-card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 20px;
+    width: 25%;
+}
+
+.card-image-container{
+    height: 90%;
+}
+/* height={400} width={300} */
+.insta-img{
+    border-radius: 20px ;
+    width: 100%;
+    height: 95%
+}
+
+@media screen and (max-width: 1450px){
+    .insta-card{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .insta-card{
+        width: 40%
+    }
+}
+@media screen and (max-width: 710px) {
+    .insta-card{
+        width: 80%;
+    }
+}
