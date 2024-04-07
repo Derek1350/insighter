@@ -20,15 +20,6 @@
   border-radius: 50px;
 }
 
-body {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 30px;
-  background-color: #e2e1dc;
-}
 .schedule-container {
   position: relative;
   width: 1200px;
